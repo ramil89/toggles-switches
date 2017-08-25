@@ -432,7 +432,10 @@
 			});
 		});
 	})();
-
+	
+	// adding link to function in order to init at certain moment
+	window.initToggle = initialize;
+	
 	// initialize toggles & switches in entire document
 	initialize(document);
 
