@@ -398,6 +398,10 @@
 
 	// select all toggles & switches in provided node and initialize
 	function initialize(containerNode) {
+		//reinitialize delayed toggles
+		var delayeds = containerNode.querySelectorAll('[data-delayed-init]');
+        	delayeds.forEach(function (v) { v.removeAttribute('data-toggle-switch'); });
+		
 		var // use not selector to ensure initialized toggles & switches aren't touched
 			notInitialized = ':not([data-toggle-switch])',
 			toggles = containerNode.querySelectorAll('[data-toggle]'+notInitialized),
